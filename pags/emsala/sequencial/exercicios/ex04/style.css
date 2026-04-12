@@ -1,0 +1,155 @@
+/* 1. Reset e Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 2. Variáveis de Cores (Paleta Dark Mode) */
+:root {
+    --bg-color: #0e1629;
+    --card-bg: #1e293b;
+    --text-color: #f8fafc;
+    --js-yellow: #f7df1e;
+    --accent-blue: #38bdf8;
+    
+}
+
+/* 3. Estilo do Corpo da Página */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 4. Cabeçalho */
+header {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+    animation: fadeInDown 1s ease;
+}
+
+header h1 { font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem; }
+header h1 span { color: var(--js-yellow); }
+header p { font-size: 1.2rem; color: #94a3b8; font-weight: 300; }
+
+/* 5. Área Principal e Grid */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* 6. Os Cards de Exercícios */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    animation: fadeInUp 1s ease;
+}
+
+.icon { font-size: 3.5rem; margin-bottom: 1.5rem; }
+.card h2 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent-blue); }
+.card p { font-size: 0.95rem; color: #cbd5e1; line-height: 1.6; }
+
+/* 7. Efeitos de Interação (Hover) */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background-color: var(--js-yellow);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(247, 223, 30, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(247, 223, 30, 0.1);
+}
+
+.card:hover::before { transform: scaleX(1); }
+
+/* 8. Rodapé */
+footer { text-align: center; padding: 2rem; color: #64748b; font-size: 0.9rem; }
+footer strong { color: var(--js-yellow); }
+
+/* 9. Animações de Entrada */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* 10. Estilo para os links da lista */
+.container ul li a {
+    color: var(--accent-blue); /* Usa o azul definido nas suas variáveis */
+    text-decoration: none;      /* Remove o sublinhado, se desejar */
+    transition: color 0.3s;    /* Suaviza a mudança de cor */
+}
+
+/* 11. Efeito ao passar o mouse */
+.container ul li a:hover {
+    color: var(--js-yellow);   /* Muda para amarelo ao passar o mouse */
+}
+.card:nth-child(1) { animation-delay: 0.1s; animation-fill-mode: both; }
+.card:nth-child(2) { animation-delay: 0.3s; animation-fill-mode: both; }
+.card:nth-child(3) { animation-delay: 0.5s; animation-fill-mode: both; }
+
+/* 12. Estilização botão*/
+button {
+  /* Cores baseadas no seu código */
+  background-color: var(--card-bg);
+  color: var(--js-yellow);
+  
+  /* Layout e Espaçamento */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 24px;
+  
+  /* Borda e Arredondamento */
+  border: 2px solid var(--js-yellow);
+  border-radius: 8px;
+  
+  /* Tipografia e Cursor */
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  
+  /* Transição suave para o efeito de hover */
+  transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+button:hover {
+  background-color: var(--js-yellow);
+  color: var(--card-bg);
+  transform: translateY(-2px); /* Pequeno pulo para cima */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
