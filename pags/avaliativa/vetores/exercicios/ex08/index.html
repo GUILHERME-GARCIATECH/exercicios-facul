@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio 08</title>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../../../../assets/css/style.css">
 </head>
+
 <body>
     <header>
-        <h1>Caixa registradora <span>infinita</span></h1>
-        <p>Informe o valor individual dos produtos! Para sair digite 0 ou um numero negativo.</p>
+        <h1>Gerador de <span>Múltiplos</span></h1>
+        <p><strong>Objetivo:</strong> Gerar um vetor com N múltiplos de um número base escolhido pelo usuário.</p>
+        <p><strong>Como funciona:</strong> Um laço de repetição calcula os múltiplos e os insere no vetor usando o
+            método <code>.push()</code>.</p>
     </header>
     <main>
         <div class="card">
-        <div class="container-botao">
-            <button onclick="calcular()">Clique aqui para calcular!</button>
-            <div id="res">
-                <p>O seu resultado sera exibido aqui...</p>
+            <div class="container-botao">
+                <button onclick="calcular()">Clique aqui para calcular!</button>
+                <div id="res">
+                    <p>O seu resultado sera exibido aqui...</p>
+                </div>
             </div>
-        </div>
         </div>
     </main>
     <script src="script.js"></script>
 </body>
+
 </html>

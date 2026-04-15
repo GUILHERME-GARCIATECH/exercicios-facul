@@ -1,16 +1,16 @@
-function calcular(){
+function calcular() {
     let res = document.querySelector('div#res');
     let v = [];
     let s = 0;
 
-    for(let i = 0; i < 5; i++){
-        v.push(Number(window.prompt(`Informe a nota do ${i+1} Aluno:`)));
+    for (let i = 0; i < 5; i++) {
+        v.push(Number(window.prompt(`Informe a nota do ${i + 1} Aluno:`)));
     }
 
-    let m = v.reduce((acc, cur) => acc + cur, 0)/5
+    let m = v.reduce((acc, cur) => acc + cur, 0) / 5
 
-    for(let i = 0; i < 5; i++){
-        if(v[i] > m){
+    for (let i = 0; i < 5; i++) {
+        if (v[i] > m) {
             s += 1;
         }
     }

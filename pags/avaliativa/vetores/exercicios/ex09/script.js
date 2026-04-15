@@ -1,4 +1,4 @@
-function calcular(){
+function calcular() {
     let res = document.querySelector('div#res');
     const v1 = [1, 2, 3];
     const v2 = [4, 5, 6];

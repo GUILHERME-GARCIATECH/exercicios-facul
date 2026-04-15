@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio 09</title>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../../../../assets/css/style.css">
 </head>
+
 <body>
     <header>
-        <h1>O jogo da <span>advinhação</span></h1>
-        <p>O computador calculara um numero aleatorio. Dê palpites até acerta!</p>
+        <h1>Limpando os <span>Repetidos</span></h1>
+        <p><strong>Objetivo:</strong> Criar uma versão de um vetor original removendo todas as duplicatas.</p>
+        <p><strong>Como funciona:</strong> O programa verifica se cada item já existe no novo vetor com
+            <code>.includes()</code> antes de adicioná-lo.</p>
     </header>
-     <main>
+    <main>
         <div class="card">
-        <div class="container-botao">
-            <button onclick="calcular()">Clique aqui para começar!</button>
-            <div id="res"></div>
-        </div>
+            <div class="container-botao">
+                <button onclick="calcular()">Clique aqui para começar!</button>
+                <div id="res"></div>
+            </div>
         </div>
     </main>
     <script src="script.js"></script>
 </body>
+
 </html>
