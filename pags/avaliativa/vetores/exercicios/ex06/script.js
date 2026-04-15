@@ -1,27 +1,30 @@
 function calcular(){
     let res = document.querySelector('div#res');
-    let n = window.prompt("Informe o numero!");
+    let v = new Array(5);
 
-    if(n === null || isNaN(n)){
-        alert("Por favor insira um valor valido!")
-        return;
+    for(let i = 0; i < v.length; i++){
+        v[i] = window.prompt(`Informe o ${i+1}º numero!`);
     }
-    n = Number(n);
-    let f = n;
 
-    res.innerHTML = '';
-
-    if(f === 0){
-        res.innerHTML = `<p><strong>Fatorial de 0 é igual a 1!</strong></p>`
-    }else if(n<0){
-         res.innerHTML = `<p style="color: #ff4444">Não exite fatorial de numero negativo!</p>`
-    }else{
-        for(let i = n - 1; i>=1; i--){
-            let a = f;
-            f *= i;
-            res.innerHTML += `<p>${a} x ${i} = ${f}</p>`
-        }
-        res.innerHTML += `<p><strong>Resultado Final: ${f}</strong></p>`;
+    let texto = v.reverse().join(', ');
+    res.innerHTML = `<p>Inverso do vetor: [${texto}]</p>`
+    
     }
-   
-}
+
+
+//     Logica sem reverse
+
+//     let res = document.querySelector('div#res');
+//     let v = new Array(5);
+//     let texto = "";
+
+//     for(let i = 0; i < v.length; i++){
+//         v[i] = window.prompt(`Informe o ${i+1}º numero!`);
+//     }
+
+//     for(let i = v.length; i > 0; i--){
+//         texto += v[i-1];
+//         if(i > 1) texto += ", ";
+//     }
+    
+//     res.innerHTML = `<p>Inverso: [${texto}]</p>`

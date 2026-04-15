@@ -1,22 +1,16 @@
 function calcular() {
     let res = document.querySelector('div#res');
-    let p;
-    let c = 1;
-    const r = Math.floor(Math.random() * 10) + 1;
-    //alert(r) testar condição c == 1
-    p = Number(window.prompt("De um palpite!"));
+ 
+    const v1 = [1, 2, 2, 3, 4, 4, 4, 5];
 
-    while(p != r){
-        alert("Valor incorreto! Tente novamente.")
-        p = Number(window.prompt("Fale seu novo palpite!"));
-        c++
+    let v2 = [];
+
+    for(let i = 0; i < v1.length; i++){
+        if(!v2.includes(v1[i])){
+            v2.push(v1[i])
+        }
     }
-    if(c == 1){
-        res.innerHTML = `<p style="color: #27b927">Valor correto!</p>
-    <p>Você acertou de primeira. PARABENS!</p>`
-    }else{
-        res.innerHTML = `<p style="color: #27b927">Valor correto!</p>
-    <p>Você precisou de ${c} tentativas para acertar!</p>`
-    }
-    
+
+    res.innerHTML = `<p>Vetor principal  = [${v1.join(', ')}]</p>
+    <p>Vetor sem repetição = [${v2.join(', ')}]</p>`
 }
