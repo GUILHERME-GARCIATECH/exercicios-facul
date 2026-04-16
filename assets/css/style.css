@@ -52,7 +52,13 @@ main {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     padding: 2rem 1rem;
+}
+main .card {
+    margin-top: 2rem; /* Define exatamente a distância do header */
+    width: 100%;
+    max-width: 500px; /* Deixa o card do exercício com uma largura robusta */
 }
 
 /* 6. Grid (CORRIGIDO 🔥) */
@@ -62,6 +68,7 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+    align-items: start;
 }
 
 /* 7. Card (REESTRUTURADO) */
@@ -69,13 +76,16 @@ main {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 1.8rem;
+    padding: 2.5rem;
+    min-height: 220px;
     text-decoration: none;
     color: var(--text);
+    
 
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    justify-content: center;
+    gap: 1rem;
 
     transition: all 0.25s ease;
 }
