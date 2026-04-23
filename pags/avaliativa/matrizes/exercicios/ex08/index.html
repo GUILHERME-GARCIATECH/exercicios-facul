@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Exercicio 08</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../../../../assets/css/style.css">
 </head>
+
 <body>
     <header>
-        <h1>Trabalhando com <span>números</span></h1>
+        <h1>Verificador de <span>Jogo da Velha</span></h1>
+        <p><strong>Objetivo:</strong> Verificar se há um vencedor em linha em um tabuleiro 3x3 de Jogo da Velha.</p>
+        <p><strong>Como funciona:</strong> O programa compara os três elementos de cada linha para checar se são iguais
+            e não vazios.</p>
     </header>
-    
-     
+    <main>
+        <div class="card">
+            <div class="container-botao">
+                <button onclick="calcular()">Clique aqui para iniciar o programa!</button>
+                <div id="res">
+                    <p>O seu resultado sera exibido aqui...</p>
+                </div>
+            </div>
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
+
 </html>

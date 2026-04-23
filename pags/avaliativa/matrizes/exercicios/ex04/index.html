@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Exercicio 04</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../../../../assets/css/style.css">
 </head>
+
 <body>
     <header>
-        <h1>Trabalhando com <span>números</span></h1>
+        <h1>A Diagonal <span>Principal</span></h1>
+        <p><strong>Objetivo:</strong> Extrair e exibir apenas os elementos que formam a diagonal principal de uma
+            matriz.</p>
+        <p><strong>Como funciona:</strong> O programa filtra os elementos onde o índice da linha é igual ao da coluna
+            (<code>i === j</code>).</p>
     </header>
-    
-     
+    <main>
+        <div class="card">
+            <div class="container-botao">
+                <button onclick="calcular()">Clique aqui para iniciar o programa!</button>
+                <div id="res">
+                    <p>O seu resultado sera exibido aqui...</p>
+                </div>
+            </div>
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
+
 </html>
