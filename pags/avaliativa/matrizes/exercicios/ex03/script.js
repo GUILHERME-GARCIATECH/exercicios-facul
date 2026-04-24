@@ -1,21 +1,29 @@
+import { gerarMatrizAleatoria } from "../util.js";
+
 function calcular() {
     let res = document.querySelector('div#res');
-    const v = [];
+    res.innerHTML = ''; 
 
-    for (let i = 0; i < 5; i++) {
-        v.push(Number(window.prompt(`Digite um o ${i + 1} número:`)));
-    }
+    const matriz = gerarMatrizAleatoria(4,4,100)
 
-    maior = v[0];
-    menor = v[0];
-    for (let i = 1; i < 5; i++) {
-        if (maior < v[i]) {
-            maior = v[i]
-        } if (menor > v[i]) {
-            menor = v[i]
+    let maiorValor = matriz[0][0];
+    
+    let tabelaHTML = '<table class="matriz-table">';
+
+    for (let i = 0; i < matriz.length; i++) {
+        tabelaHTML += '<tr>';
+        for (let j = 0; j < matriz[i].length; j++) {
+            if (matriz[i][j] > maiorValor) {
+                maiorValor = matriz[i][j];
+            }
+            tabelaHTML += `<td>${matriz[i][j]}</td>`;
         }
+        tabelaHTML += '</tr>';
     }
+    tabelaHTML += '</table>';
 
-    res.innerHTML = `<p>Maior valor: ${maior}</p>`
-    res.innerHTML += `<p>Menor valor: ${menor}</p>`
+    res.innerHTML = tabelaHTML;
+    res.innerHTML += `<p class="resultado-texto">O maior valor gerado foi: <strong>${maiorValor}</strong></p>`;
 }
+
+window.calcular = calcular;

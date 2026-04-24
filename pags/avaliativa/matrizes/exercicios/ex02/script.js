@@ -1,15 +1,26 @@
-function calcular() {
-    let res = document.querySelector('div#res');
-    const v = [2, 3, 5, 6, 8];
+import { gerarMatrizAleatoria } from "../util.js";
 
-    //  Logica com reduce()
+function calculo() {
+  let res = document.querySelector("div#res");
+  res.innerHTML = "";
+  let soma = 0;
 
-    let soma = v.reduce((acc, cur) => acc + cur, 0);
-    res.innerHTML += `<p>A soma dos itens do array é igual a ${soma}</p>`
+  const matriz = gerarMatrizAleatoria(4,4,10);
+
+  let tabelaHTML = `<table class="matriz-table">`;
+
+  for (let i = 0; i < matriz.length; i++) {
+    tabelaHTML += `<tr>`;
+    for (let j = 0; j < matriz[i].length; j++) {
+      soma += matriz[i][j];
+      tabelaHTML += `<td> ${matriz[i][j]}</td>`;
+    }
+    tabelaHTML += `</tr>`;
+  }
+  tabelaHTML += `</table>`;
+
+  res.innerHTML += tabelaHTML;
+  res.innerHTML += `<p class="resultado-texto">Soma = <strong>${soma}</strong></p>`;
 }
 
-// Logica com for
-// let soma = 0;
-// for(let i = 0; i < 5; i++){
-//     soma += v[i]
-// }
+window.calculo = calculo;

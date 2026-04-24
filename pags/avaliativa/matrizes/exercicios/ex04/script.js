@@ -1,16 +1,24 @@
+import { gerarMatrizAleatoria } from "../util.js";
+
 function calcular() {
-    let res = document.querySelector('div#res');
-    res.innerHTML = '';
+  let res = document.querySelector("div#res");
+  res.innerHTML = "";
 
-    let n = Number(window.prompt("Quantos numeros deseja digitar?"));
-    const v = [];
+  const matriz = gerarMatrizAleatoria(4, 4, 10);
 
-    for (let i = 0; i < n; i++) {
-        v.push(Number(window.prompt(`Informe o ${i + 1}º numero:`)));
+  let tabelaHTML = `<table class="matriz-table">`;
+  for (let i = 0; i < matriz.length; i++) {
+    tabelaHTML += `<tr>`;
+    for (let j = 0; j < matriz[i].length; j++) {
+      if (i === j) {
+        tabelaHTML += `<td><strong>${matriz[i][j]}</strong></td>`;
+      } else {
+        tabelaHTML += `<td>${matriz[i][j]}</td>`;
+      }
     }
-
-    const pares = v.filter(num => num % 2 === 0);
-
-    res.innerHTML = `<p>Numeros digitados: [${v.join(', ')}]</p>`
-    res.innerHTML += `<p>Numeros pares: [${pares.join(', ')}]</p>`;
+    tabelaHTML += `</tr>`;
+  }
+  tabelaHTML += `</table>`;
+  res.innerHTML = tabelaHTML;
 }
+window.calcular = calcular;

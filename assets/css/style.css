@@ -196,3 +196,30 @@ footer {
     font-size: 0.8rem;
     color: var(--text-soft);
 }
+
+.matriz-table {
+    width: 100%;           /* Ocupa a largura total do container */
+    max-width: 300px;      /* Mas não fica gigante */
+    margin: 1.5rem auto;   /* Centraliza horizontalmente */
+    border-collapse: collapse;
+    font-size: 1.2rem;
+}
+
+.matriz-table td {
+    border: 1px solid var(--border); /* Usa a cor de borda das suas variáveis */
+    padding: 15px;
+    text-align: center;
+    width: 25%;            /* Garante que as 4 colunas tenham tamanhos iguais */
+    color: var(--text);
+}
+
+.resultado-texto {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--text-soft);
+}
+
+.resultado-texto strong {
+    color: var(--yellow);
+    font-size: 1.1rem;
+}

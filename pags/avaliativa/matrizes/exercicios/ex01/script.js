@@ -1,20 +1,25 @@
+import { gerarMatrizAleatoria } from "../util.js";
+
 function calculo() {
-    let res = document.querySelector('div#res');
-    res.innerHTML = ``;
+  let res = document.querySelector("div#res");
+  res.innerHTML = ``;
 
-    const num = [
-        [1,2,3], 
-        [4,5,6], 
-        [7,8,9],
-    ];
+  const matriz = gerarMatrizAleatoria(4, 4, 9);
 
-    for (let i = 0; i < num.length; i++){
-        let texto = '';
+  let tabelaHTML = `<table class="matriz-table">`;
 
-        for(let j = 0; j < num[i].length; j++){
-            texto += num[i][j] + " ";
-        }
+  for (let i = 0; i < matriz.length; i++) {
+    tabelaHTML += `<tr>`;
 
-        res.innerHTML += `<p>[${texto}]</p>`
+    for (let j = 0; j < matriz[i].length; j++) {
+      tabelaHTML += `<td> ${matriz[i][j]}</td>`;
     }
+
+    tabelaHTML += `</tr>`;
+  }
+
+  tabelaHTML += `</table>`;
+  res.innerHTML += tabelaHTML;
 }
+
+window.calculo = calculo;

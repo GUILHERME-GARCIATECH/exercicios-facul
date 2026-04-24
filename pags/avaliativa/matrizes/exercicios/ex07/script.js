@@ -1,19 +1,32 @@
-function calcular() {
-    let res = document.querySelector('div#res');
-    let v = [];
-    let s = 0;
+import { gerarMatrizAleatoria } from "../util.js"; 
 
-    for (let i = 0; i < 5; i++) {
-        v.push(Number(window.prompt(`Informe a nota do ${i + 1} Aluno:`)));
-    }
+function calcular() { 
+    let res = document.querySelector("div#res"); 
+    res.innerHTML = ""; 
 
-    let m = v.reduce((acc, cur) => acc + cur, 0) / 5
+    const n = Number(window.prompt("Informe a dimensão da sua matriz")); 
+    if (!n || n <= 0) return;
 
-    for (let i = 0; i < 5; i++) {
-        if (v[i] > m) {
-            s += 1;
-        }
-    }
-    res.innerHTML = `<p>A notas dos alunos foram, respectivamente, ${v.join(', ')}</p>`
-    res.innerHTML += `<p>A média da turma é ${m}! ${s} alunos ficaram acima da média.</p>`
-}
+    let matriz = []; 
+    let tabelaHTML = `<table class="matriz-table">`; 
+
+    for (let i = 0; i < n; i++) { 
+        matriz[i] = []; 
+        tabelaHTML += `<tr>`; 
+
+        for (let j = 0; j < n; j++) { 
+            if (i === j) { 
+                matriz[i][j] = 1; 
+            } else { 
+                matriz[i][j] = 0; 
+            } 
+            tabelaHTML += `<td>${matriz[i][j]}</td>`; 
+        } 
+        tabelaHTML += `</tr>`; 
+    } 
+
+    tabelaHTML += `</table>`; 
+    res.innerHTML = tabelaHTML; 
+} 
+
+window.calcular = calcular;

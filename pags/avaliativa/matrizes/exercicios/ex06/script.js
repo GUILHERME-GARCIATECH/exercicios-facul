@@ -1,30 +1,43 @@
-function calcular(){
-    let res = document.querySelector('div#res');
-    let v = new Array(5);
+import { gerarMatrizAleatoria } from "../util.js";
 
-    for(let i = 0; i < v.length; i++){
-        v[i] = window.prompt(`Informe o ${i+1}º numero!`);
+function calcular() {
+  let res = document.querySelector("div#res");
+  res.innerHTML = "";
+
+  const n = Number(window.prompt("Informe o multiplicador da matriz"));
+  const matriz = gerarMatrizAleatoria(2, 2, 10);
+
+  const matrizMultiplicada = [];
+
+  let tabelaMul = `<table class="matriz-table">`;
+  let tabelaOrg = `<table class="matriz-table">`;
+
+  for (let i = 0; i < matriz.length; i++) {
+    tabelaMul += `<tr>`;
+    tabelaOrg += `<tr>`;
+
+    matrizMultiplicada.push([]);
+
+    for (let j = 0; j < matriz[i].length; j++) {
+      matrizMultiplicada[i][j] = matriz[i][j] * n;
+
+      tabelaMul += `<td>${matrizMultiplicada[i][j]}</td>`;
+      tabelaOrg += `<td>${matriz[i][j]}</td>`;
+
     }
 
-    let texto = v.reverse().join(', ');
-    res.innerHTML = `<p>Inverso do vetor: [${texto}]</p>`
-    
-    }
+    tabelaMul += `</tr>`;
+    tabelaOrg += `</tr>`;
+  }
 
+  tabelaMul += `</table>`;
+  tabelaOrg += `</table>`;
 
-//     Logica sem reverse
+  res.innerHTML += `<p>Tabela original</p>`;
+  res.innerHTML += tabelaOrg;
 
-//     let res = document.querySelector('div#res');
-//     let v = new Array(5);
-//     let texto = "";
+  res.innerHTML += `<p>Tabela multiplicada</p>`;
+  res.innerHTML += tabelaMul;
+}
 
-//     for(let i = 0; i < v.length; i++){
-//         v[i] = window.prompt(`Informe o ${i+1}º numero!`);
-//     }
-
-//     for(let i = v.length; i > 0; i--){
-//         texto += v[i-1];
-//         if(i > 1) texto += ", ";
-//     }
-    
-//     res.innerHTML = `<p>Inverso: [${texto}]</p>`
+window.calcular = calcular;

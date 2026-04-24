@@ -1,31 +1,24 @@
-function calcular(){
-    let res = document.querySelector('div#res');
-    res.innerHTML = '';
-    const frutas = ["maçã","uva","goiaba","banana","maracuja"];
-    let f = window.prompt("Qual fruta você deseja buscar? Maçã, uva, goiaba, banana, ou maracuja?");
-    let p = frutas.indexOf(f);
+import { gerarMatrizAleatoria } from "../util.js";
 
-    if(p === -1){
-        res.innerHTML = `<p>Sua fruta não esta disponivel!</p>`;
-    }else{
-        res.innerHTML = `<p>Sua fruta esta na ${p+1} posição!</p>`;
+function calcular() {
+  let res = document.querySelector("div#res");
+  res.innerHTML = '';
+
+  const matriz = gerarMatrizAleatoria(3, 4, 10);
+
+  let tabelaHTML = `<table class="matriz-table">`;
+  for (let i = 0; i < matriz.length; i++) {
+    let somalinhas = 0;
+    tabelaHTML += `<tr>`;
+    for (let j = 0; j < matriz[i].length; j++) {
+      somalinhas += matriz[i][j];
+      tabelaHTML += `<td>${matriz[i][j]}</td>`;
     }
-   
+    tabelaHTML += `<td><strong>${somalinhas}</strong></td>`;
+    tabelaHTML += `</tr>`;
+  }
+  tabelaHTML += `</table>`;
+  res.innerHTML = tabelaHTML;
 }
 
-    // let res = document.querySelector('div#res');
-    // res.innerHTML = '';
-    // const frutas = ["maçã","uva","goiaba","banana","maracuja"];
-    // let f = window.prompt("Qual fruta você deseja buscar? Maçã, uva, goiaba, banana, ou maracuja?");
-    // let p = null;
-    // for(let i = 0; i < 5; i++){
-    //     if(f == frutas[i]){
-    //         p = i;
-    //         break;
-    //     }
-    // }
-    // if(p === null){
-    //     res.innerHTML = `<p>Sua fruta não esta disponivel!</p>`
-    // }else{
-    //     res.innerHTML = `<p>Sua fruta esta na ${p+1} posição!</p>`   
-    // }
+window.calcular = calcular;
