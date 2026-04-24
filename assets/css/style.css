@@ -223,3 +223,13 @@ footer {
     color: var(--yellow);
     font-size: 1.1rem;
 }
+.linha-vencedora {
+    background-color: rgba(250, 204, 21, 0.2); /* Um fundo amarelo bem suave */
+    transition: background-color 0.5s ease;
+}
+
+.linha-vencedora td {
+    color: var(--yellow) !important; /* Força a cor do texto para amarelo */
+    border-color: var(--yellow);     /* Muda a cor da borda da linha que ganhou */
+    font-weight: bold;
+}
