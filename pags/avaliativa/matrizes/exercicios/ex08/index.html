@@ -1,25 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercicio 08</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../../../../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../../../assets/css/style.css" />
 </head>
 
 <body>
     <header>
-        <h1>Verificador de <span>Jogo da Velha</span></h1>
-        <p><strong>Objetivo:</strong> Verificar se há um vencedor em linha em um tabuleiro 3x3 de Jogo da Velha.</p>
-        <p><strong>Como funciona:</strong> O programa compara os três elementos de cada linha para checar se são iguais
-            e não vazios.</p>
+        <h1>Analisador de <span>Jogo da Velha</span></h1>
+        <p><strong>Objetivo:</strong> Demonstrar a verificação de vitória em tabuleiros 3x3, desde a lógica de linhas
+            simples até padrões complexos.</p>
+        <p><strong>Como funciona:</strong> O modo <strong>Simples</strong> foca na análise clássica por linhas. O modo
+            <strong>Completo</strong> expande a verificação para colunas e diagonais, utilizando mapeamento de
+            coordenadas para destacar o vencedor.</p>
+            <p><strong>Observação:</strong> O programa gera a propria tabela sempre que iniciado. Essa função pode ser verificado no arquivo <strong>util.js</strong></p>
     </header>
     <main>
         <div class="card">
             <div class="container-botao">
-                <button onclick="calcular()">Clique aqui para iniciar o programa!</button>
+                <button onclick="jogoSimples()">
+                    Clique aqui para iniciar o programa SIMPLES!
+                </button>
+            </div>
+            <div class="container-botao">
+                <button onclick="jogoCompleto()">
+                    Clique aqui para iniciar o programa COMPLETO!
+                </button>
                 <div id="res">
                     <p>O seu resultado sera exibido aqui...</p>
                 </div>

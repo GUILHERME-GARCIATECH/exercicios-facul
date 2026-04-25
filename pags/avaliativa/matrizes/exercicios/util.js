@@ -9,7 +9,7 @@ export function gerarMatrizAleatoria(linhas, colunas, multiplicador) {
   return matriz;
 }
 
-export function gerarJogoDaVelha() {
+export function gerarJogoDaVelhaSimples() {
   let linhaGanhadora = Math.floor(Math.random() * 3);
   let jogadorVencedor = Math.random() > 0.5 ? "X" : "O";
 
@@ -37,6 +37,61 @@ export function gerarJogoDaVelha() {
             break;
         }
       }
+    }
+  }
+  return matriz;
+}
+
+export function gerarJogoDaVelhaCompleto() {
+
+  //Mapeando as combinações e construindo a matriz
+  const combincoes = [
+    [[0, 0], [0, 1], [0, 2]], // linha 0
+    [[1, 0], [1, 1], [1, 2]], // linha 1
+    [[2, 0], [2, 1], [2, 2]], // linha 2
+    [[0, 0], [1, 0], [2, 0]], // coluna 0
+    [[0, 1], [1, 1], [2, 1]], // coluna 1
+    [[0, 2], [1, 2], [2, 2]], // coluna 2
+    [[0, 0], [1, 1], [2, 2]], // diagonal principal
+    [[2, 0], [1, 1], [0, 2]] // diagonal secundaria
+  ];
+
+  const matriz = [
+  ["", "", ""],
+  ["", "", ""],
+  ["", "", ""]
+  ];
+
+  //Escrevendo o vencedor
+  const formaVencedora = Math.floor(Math.random() * 8);
+  const jogadorVencedor = Math.random() > 0.5 ? "X" : "O";
+  
+  const coordenadasVencedoras = combincoes[formaVencedora];
+  coordenadasVencedoras.forEach(([l, c]) => {
+    matriz[l][c] = jogadorVencedor;
+  });
+
+  //Preenchendo ruido
+  let disponiveis = [];
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      if (matriz[i][j] === ""){
+       disponiveis.push([i, j])
+      }
+    }
+  }
+
+  disponiveis.sort(() => Math.random() - 0.5)
+
+  const jogadorPerdedor = jogadorVencedor === "X" ? "O" : "X";
+
+  const [lV, cV] = disponiveis.pop();
+  matriz [lV][cV] = jogadorVencedor;
+
+  for (let k = 0; k < 3; k++){
+    if (disponiveis.length > 0){
+      const [lP, cP] = disponiveis.pop();
+      matriz [lP][cP] = jogadorPerdedor
     }
   }
   return matriz;
