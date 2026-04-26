@@ -5,7 +5,7 @@ function calculo() {
   res.innerHTML = "";
   let soma = 0;
 
-  const matriz = gerarMatrizAleatoria(4,4,10);
+  const matriz = gerarMatrizAleatoria(3,3,10);
 
   let tabelaHTML = `<table class="matriz-table">`;
 

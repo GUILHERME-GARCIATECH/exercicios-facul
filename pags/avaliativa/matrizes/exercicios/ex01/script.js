@@ -4,7 +4,11 @@ function calculo() {
   let res = document.querySelector("div#res");
   res.innerHTML = ``;
 
-  const matriz = gerarMatrizAleatoria(4, 4, 9);
+  const matriz = [
+    [1, 2, 3],
+    [4, 4, 6],
+    [7, 8, 9],
+  ];
 
   let tabelaHTML = `<table class="matriz-table">`;
 
