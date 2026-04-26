@@ -198,18 +198,18 @@ footer {
 }
 
 .matriz-table {
-    width: 100%;           /* Ocupa a largura total do container */
-    max-width: 300px;      /* Mas não fica gigante */
-    margin: 1.5rem auto;   /* Centraliza horizontalmente */
+    width: 100%;          
+    max-width: 300px;      
+    margin: 1.5rem auto;   
     border-collapse: collapse;
     font-size: 1.2rem;
 }
 
 .matriz-table td {
-    border: 1px solid var(--border); /* Usa a cor de borda das suas variáveis */
+    border: 1px solid var(--border); 
     padding: 15px;
     text-align: center;
-    width: 25%;            /* Garante que as 4 colunas tenham tamanhos iguais */
+    width: 25%;            
     color: var(--text);
 }
 
@@ -224,12 +224,43 @@ footer {
     font-size: 1.1rem;
 }
 .linha-vencedora {
-    background-color: rgba(250, 204, 21, 0.2); /* Um fundo amarelo bem suave */
+    background-color: rgba(250, 204, 21, 0.2); 
     transition: background-color 0.5s ease;
 }
 
 .linha-vencedora td {
-    color: var(--yellow) !important; /* Força a cor do texto para amarelo */
-    border-color: var(--yellow);     /* Muda a cor da borda da linha que ganhou */
+    color: var(--yellow) !important; 
+    border-color: var(--yellow);     
     font-weight: bold;
+}
+
+.poltrona-table {
+    margin: 1.5rem auto;
+    border-spacing: 8px; 
+    border-collapse: separate; 
+}
+
+.poltrona-table td {
+    width: 60px;
+    height: 50px;
+    border-radius: 8px 8px 4px 4px; 
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.poltrona-livre {
+    background: rgba(34, 197, 94, 0.1);
+    color: #4ade80;
+    border-color: #166534 !important;
+}
+
+.poltrona-reservada {
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+    border-color: #991b1b !important;
+    box-shadow: inset 0 0 10px rgba(239, 68, 68, 0.2);
 }
