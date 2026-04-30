@@ -55,10 +55,13 @@ main {
     align-items: flex-start;
     padding: 2rem 1rem;
 }
+
 main .card {
-    margin-top: 2rem; /* Define exatamente a distância do header */
+    margin-top: 2rem;
+    /* Define exatamente a distância do header */
     width: 100%;
-    max-width: 500px; /* Deixa o card do exercício com uma largura robusta */
+    max-width: 500px;
+    /* Deixa o card do exercício com uma largura robusta */
 }
 
 /* 6. Grid (CORRIGIDO 🔥) */
@@ -80,7 +83,7 @@ main .card {
     min-height: 220px;
     text-decoration: none;
     color: var(--text);
-    
+
 
     display: flex;
     flex-direction: column;
@@ -94,7 +97,7 @@ main .card {
 .card:hover {
     transform: translateY(-4px);
     border-color: var(--blue);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* 8. ICON (CORRIGIDO DE VEZ 🔥) */
@@ -146,7 +149,8 @@ label {
     color: var(--text-soft);
 }
 
-input, select {
+input,
+select {
     width: 100%;
     padding: 10px;
     border-radius: 8px;
@@ -156,7 +160,8 @@ input, select {
     margin-bottom: 1rem;
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
     border-color: var(--blue);
     outline: none;
 }
@@ -198,18 +203,18 @@ footer {
 }
 
 .matriz-table {
-    width: 100%;          
-    max-width: 300px;      
-    margin: 1.5rem auto;   
+    width: 100%;
+    max-width: 300px;
+    margin: 1.5rem auto;
     border-collapse: collapse;
     font-size: 1.2rem;
 }
 
 .matriz-table td {
-    border: 1px solid var(--border); 
+    border: 1px solid var(--border);
     padding: 15px;
     text-align: center;
-    width: 25%;            
+    width: 25%;
     color: var(--text);
 }
 
@@ -223,31 +228,32 @@ footer {
     color: var(--yellow);
     font-size: 1.1rem;
 }
+
 .linha-vencedora {
-    background-color: rgba(250, 204, 21, 0.2); 
+    background-color: rgba(250, 204, 21, 0.2);
     transition: background-color 0.5s ease;
 }
 
 .linha-vencedora td {
-    color: var(--yellow) !important; 
-    border-color: var(--yellow);     
+    color: var(--yellow) !important;
+    border-color: var(--yellow);
     font-weight: bold;
 }
 
 .poltrona-table {
     margin: 1.5rem auto;
-    border-spacing: 8px; 
-    border-collapse: separate; 
+    border-spacing: 8px;
+    border-collapse: separate;
 }
 
 .poltrona-table td {
     width: 60px;
     height: 50px;
-    border-radius: 8px 8px 4px 4px; 
+    border-radius: 8px 8px 4px 4px;
     font-size: 0.7rem;
     text-transform: uppercase;
     font-weight: bold;
-    border: 2px solid rgba(255,255,255,0.1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
     cursor: default;
 }
@@ -263,4 +269,27 @@ footer {
     color: #f87171;
     border-color: #991b1b !important;
     box-shadow: inset 0 0 10px rgba(239, 68, 68, 0.2);
+}
+
+#tabuleiro-visual {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    /* 3 colunas de 100px */
+    gap: 5px;
+    justify-content: center;
+}
+
+.celula {
+    width: 100px;
+    height: 100px;
+    background-color: #00628f;
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.celula:hover {
+    background-color: #008cff;
 }
