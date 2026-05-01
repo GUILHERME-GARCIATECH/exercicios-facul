@@ -271,25 +271,4 @@ footer {
     box-shadow: inset 0 0 10px rgba(239, 68, 68, 0.2);
 }
 
-#tabuleiro-visual {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    /* 3 colunas de 100px */
-    gap: 5px;
-    justify-content: center;
-}
 
-.celula {
-    width: 100px;
-    height: 100px;
-    background-color: #00628f;
-    font-size: 3em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.celula:hover {
-    background-color: #008cff;
-}
